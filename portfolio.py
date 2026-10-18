@@ -28,7 +28,7 @@ def download_prices() -> tuple[list[str], np.ndarray, list[str]]:
         start=START_DATE,
         auto_adjust=True,
         progress=False,
-        threads=True,
+        threads=False,
     )
     if frame.empty or "Close" not in frame:
         raise RuntimeError("No prices returned. Check your internet connection and ticker symbols.")
